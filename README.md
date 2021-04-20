@@ -9,3 +9,7 @@ El projecte final de l'assignatura de XML
 * Item1
 
 * Item2
+
+* Autors:
+- Alejandro Barrio Fabregat
+- Marta Duarte Rodríguez
