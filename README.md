@@ -1,4 +1,4 @@
-# Project XML
+# Projecte XML
 
 El projecte final de l'assignatura de XML
 
@@ -15,3 +15,5 @@ El projecte final de l'assignatura de XML
 - Marta Duarte Rodríguez
 
 ## segon
+
+## tercer
