@@ -2,9 +2,9 @@
 
 El projecte final de l'assignatura de XML
 
-# # Introducció
+##  Introducció
 
-# # Desenvolupament
+##  Desenvolupament
 
 * Item1
 
