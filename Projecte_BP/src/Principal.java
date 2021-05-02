@@ -14,10 +14,10 @@ public class Principal {
                 Stock.controlstock();
                 break;
             case  "vendes":
-                opcio = "vendes";
+                Vendes.controlVendes();
                 break;
             case "sortir":
-                opcio = "sortir";
+
                 break;
 
 
