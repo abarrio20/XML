@@ -5,7 +5,11 @@ public class Stock {
         Scanner entrada = new Scanner(System.in);
         String aproducte;
 
-        System.out.println("Si us plau, quina opció vol triar(afegir producte/consultar/sortir)? ");
+        System.out.println("Si us plau, quina opció vol triar? ");
+        System.out.println("1. Afegir producte");
+        System.out.println("2. Consultar");
+        System.out.println("3. Sortir");
+
         aproducte = entrada.next();
 
         switch(aproducte){
