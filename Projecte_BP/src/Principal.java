@@ -12,9 +12,9 @@ public class Principal {
     }
 
     private static void menuPrincipal(Scanner entrada) {
-        String opcio;
+
         System.out.println("Si us plau, quina opció vol triar(stock/vendes/sortir)? ");
-        opcio = entrada.next();
+        String opcio = entrada.next();
         switch(opcio){
 
             case "stock":
