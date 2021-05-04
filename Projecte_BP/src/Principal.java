@@ -13,7 +13,7 @@ public class Principal {
 
     private static void menuPrincipal(Scanner entrada) {
 
-        System.out.println("Si us plau, quina opció vol triar(stock/vendes/sortir)? ");
+        System.out.println("Si us plau, quina opció vol triar (stock/vendes/sortir)? ");
         String opcio = entrada.next();
         switch(opcio){
 
