@@ -20,7 +20,6 @@ public class Principal {
             System.out.println("3. Sortir");
             int opcio = entrada.nextInt();
             try {
-
                 switch (opcio) {
                     case 1:
                         Stock.controlstock();
