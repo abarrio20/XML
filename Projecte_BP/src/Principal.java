@@ -3,7 +3,7 @@ public class Principal {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        String opcio;
+
 
         System.out.println("Benvinguts a la botiga online de Bon Preu ");
         menuPrincipal(entrada);
