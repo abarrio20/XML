@@ -13,7 +13,7 @@ public class Vendes {
                 case "afegir producte":
                     System.out.println("Mu bien");
                     break;
-                case  "consultar":
+                case "consultar":
 
                     break;
                 case "sortir":
