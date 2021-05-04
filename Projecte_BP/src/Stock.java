@@ -11,14 +11,14 @@ public class Stock {
         switch(aproducte){
 
             case "afegir producte":
-                System.out.println("Mu bien");;
+                System.out.println("Mu bien");
                 break;
             case  "consultar":
 
                 break;
             case "sortir":
 
-                break;
+
 
 
         }
