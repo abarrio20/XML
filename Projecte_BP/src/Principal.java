@@ -16,8 +16,9 @@ public class Principal {
             System.out.println("1. Stock");
             System.out.println("2. Vendes");
             System.out.println("3. Sortir");
-            int opcio = entrada.nextInt();
+
             try {
+                int opcio = entrada.nextInt();
                 switch (opcio) {
                     case 1:
                         Stock.controlstock();
