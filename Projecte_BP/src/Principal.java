@@ -30,7 +30,6 @@ public class Principal {
                         break;
                     default:
                         System.out.println(opcio + " no es vàlida la teva opció");
-
                         break;
                 }
             } catch (InputMismatchException e) {
