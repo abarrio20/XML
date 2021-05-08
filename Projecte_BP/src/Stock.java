@@ -21,6 +21,19 @@ public class Stock {
             case 3:
     }
     }
+    static void llegirStock(){
+        Scanner entrada = new Scanner (System.in);
+
+        String p = entrada.next();
+        System.out.println(p);
+
+        p = entrada.next();
+        System.out.println(p);
+
+        p = entrada.next();
+        System.out.println(p);
+
+    }
 
 
 }
