@@ -31,7 +31,6 @@ public class Principal {
                     default:
                         System.out.println(opcio + " no es vàlida la teva opció");
 
-                        System.out.println("Si us plau, quina opció vol triar ? ");
                         break;
                 }
             } catch (InputMismatchException e) {
