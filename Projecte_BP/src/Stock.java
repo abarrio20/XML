@@ -19,12 +19,12 @@ public class Stock {
 
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
-            archivo = new File ("dadesStock.txt");
-            fr = new FileReader ("dadesStock.txt");
+            archivo = new File("dadesStock.txt");
+            fr = new FileReader("dadesStock.txt");
             br = new BufferedReader(fr);
             // Lectura del fichero
             String linea;
-            while((linea=br.readLine())!=null) {
+            while ((linea = br.readLine()) != null) {
                 System.out.println(linea);
             }
             Object dadesStock;
@@ -48,32 +48,22 @@ public class Stock {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }finally{
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
             // En el finally cerramos el fichero, para asegurarnos
             // que se cierra tanto si todo va bien como si salta
             // una excepcion.
-            try{
-                if( null != fr ){
+            try {
+                if (null != fr) {
                     fr.close();
                 }
-            }catch (Exception e2){
+            } catch (Exception e2) {
                 e2.printStackTrace();
             }
-        static void llegirStock () {
-            Scanner entrada = new Scanner(System.in);
 
-            String p = entrada.next();
-            System.out.println(p);
-
-            p = entrada.next();
-            System.out.println(p);
-
-            p = entrada.next();
-            System.out.println(p);
 
         }
-
-
     }
 }
 
