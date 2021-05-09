@@ -1,11 +1,11 @@
-1 Llet 0.56
-2 Melmelada 3.00
-3 Pa 1.00
-4 Xocolata 2.00
-5 Galetes 1.50
-6 Maduixes 2.00
-7 Pizza 2.99
-8 Iogurt 1.50
-9 Brou de verdures/pollastre 1.75
-10 Cervesa 0.50
+1	Llet	0.56
+2	Melmelada	3.00
+3	Pa	1.00
+4	Xocolata	2.00
+5	Galetes	1.50
+6	Maduixes	2.00
+7	Pizza	2.99
+8	Iogurt	1.50
+9	Brou de verdures/pollastre	1.75
+10	Cervesa	0.50
 -1

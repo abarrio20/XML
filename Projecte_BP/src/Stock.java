@@ -1,35 +1,46 @@
 import java.util.Scanner;
 import java.io.*;
-import java.io.DataInputStream;
-import java.io.BufferedReader;
-import java.io.IOException;
+
 
 public class Stock {
     public static void controlstock() {
 
 
-        DataInputStream in = new DataInputStream(System.in);
         int aproducte;
-        String llegirP = ".\\IdeaProjects\\XML\\Projecte_BP\\src\\dadesStock.txt";
-        File archivo = null;
+        File archivo;
         FileReader fr = null;
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br;
+        String [][] matriuLlistaCompra = new String[10][3];
+        String carritocompra;
+        //La lista de productos siempre será fija por lo tanto será de 3x10 SIEMPRE!!!!!
+
 
         try {
 
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
-            archivo = new File("dadesStock.txt");
-            fr = new FileReader("dadesStock.txt");
+            archivo = new File("Projecte_BP\\src\\dadesStock.txt");
+            fr = new FileReader(archivo);
             br = new BufferedReader(fr);
             // Lectura del fichero
-            String linea;
-            while ((linea = br.readLine()) != null) {
+            String linea = br.readLine();
+            int contador = 0;
+            while (!linea.equals("-1")) {
+
                 System.out.println(linea);
+
+                String [] columnas = linea.split("\\t");
+                matriuLlistaCompra [contador]= columnas;
+
+
+                //Nos guarda la lista de Stock en la matriz.
+                linea = br.readLine();
+                contador++;
             }
             Object dadesStock;
 
-            Scanner entrada = new Scanner(new File("dadesStock.txt"));
+            Scanner entrada = new Scanner(System.in);
+
 
             System.out.println("Si us plau, quina opció vol triar? ");
             System.out.println("1. Afegir producte");
