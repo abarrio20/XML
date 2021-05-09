@@ -14,13 +14,13 @@ public class Vendes {
 
         switch (aproducte) {
 
-            case "afegir producte":
+            case "1":
                 System.out.println("Mu bien");
                 break;
-            case "consultar":
+            case "2":
 
                 break;
-            case "sortir":
+            case "3":
 
 
         }
