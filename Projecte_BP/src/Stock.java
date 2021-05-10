@@ -10,7 +10,8 @@ public class Stock {
         File archivo;
         FileReader fr = null;
         BufferedReader br;
-        String [][] matriuLlistaCompra = new String[10][3];
+        String[][] matriuLlistaCompra = new String[10][3];
+        String[][] LlistaDeLaCompra = new String[10][4];
         String carritocompra;
         //La lista de productos siempre será fija por lo tanto será de 3x10 SIEMPRE!!!!!
 
@@ -29,8 +30,8 @@ public class Stock {
 
                 System.out.println(linea);
 
-                String [] columnas = linea.split("\\t");
-                matriuLlistaCompra [contador]= columnas;
+                String[] columnas = linea.split("\\t");
+                matriuLlistaCompra[contador] = columnas;
 
 
                 //Nos guarda la lista de Stock en la matriz.
@@ -52,6 +53,7 @@ public class Stock {
             switch (aproducte) {
 
                 case 1:
+                    afegirProducte.productes();
                     break;
                 case 2:
                     break;
@@ -74,6 +76,22 @@ public class Stock {
             }
 
 
+        }
+    }
+
+    public static String omplirLlista (String[][] mat) {
+
+
+    }
+
+    public static void mostrarLlista (String[][] taula) {
+        String[][] LlistaDeLaCompra = new String[10][4];
+
+        for (int n = 0; n < taula.length; n++) {
+            for (int m = 0; m < taula[n].length; m++) {
+                System.out.print(taula[n][m]);
+            }
+            System.out.println("");
         }
     }
 }
