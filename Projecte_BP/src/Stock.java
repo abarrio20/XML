@@ -79,10 +79,7 @@ public class Stock {
         }
     }
 
-    public static String omplirLlista (String[][] mat) {
 
-
-    }
 
     public static void mostrarLlista (String[][] taula) {
         String[][] LlistaDeLaCompra = new String[10][4];

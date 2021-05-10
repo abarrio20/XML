@@ -33,7 +33,7 @@ public class afegirProducte {
                 switch (opcioP) {
 
                         case 1:
-                            contadorLlistacompra++;
+
                         break;
 
                         case 2:
