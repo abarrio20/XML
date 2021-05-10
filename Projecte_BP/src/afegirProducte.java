@@ -6,7 +6,7 @@ public class afegirProducte {
     public static void productes() {
         Scanner entrada = new Scanner(System.in);
         String[][] LlistaDeLaCompra = new String[10][4];
-        int contadorLlistacompra =0;
+        int contadorLlistacompra = 0;
         System.out.println("Quin producte voleu afegir ? ");
         menuProductes(entrada);
     }
@@ -32,17 +32,28 @@ public class afegirProducte {
                 int opcioP = entrada.nextInt();
                 switch (opcioP) {
 
-                        case 1:
-
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    case 8:
+                        break;
+                    case 9:
+                        break;
+                    case 10:
                         break;
 
-                        case 2:
-                        break;
-
-                        case 3:
-                        break;
-
-                        default:
+                    default:
                         System.out.println(opcioP + " no es vàlida la teva opció");
                         break;
                 }
@@ -54,12 +65,12 @@ public class afegirProducte {
         }
     }
 
-    public static String[][] omplirLlista (String[][] matriu, String[][] vector) {
+    public static String[][] omplirLlista(String[][] matriu, String[][] vector) {
         String[][] LlistaDeLaCompra = new String[10][4];
 
-        for(int o=0; o<matriu.length;o++){
+        for (int o = 0; o < matriu.length; o++) {
 
-            for(int k=0; k<matriu[0].length;k++){
+            for (int k = 0; k < matriu[0].length; k++) {
 
                 matriu[o][k] = LlistaDeLaCompra[10][4];
             }
@@ -70,7 +81,7 @@ public class afegirProducte {
 
     }
 
-    public static void mostrarLlista (String[][] taula) {
+    public static void mostrarLlista(String[][] taula) {
         String[][] LlistaDeLaCompra = new String[10][4];
 
         for (int n = 0; n < taula.length; n++) {
