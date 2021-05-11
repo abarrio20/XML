@@ -10,7 +10,7 @@ public class Stock {
         File archivo;
         FileReader fr = null;
         BufferedReader br;
-        String[][] matriuLlistaCompra = new String[1000][3];
+        String[][] matriuStock = new String[1000][3];
         String[][] LlistaDeLaCompra = new String[1000][4];
         String carritocompra;
         //La lista de productos siempre será fija por lo tanto será de 3x10 SIEMPRE!!!!!
@@ -20,24 +20,7 @@ public class Stock {
 
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
-            archivo = new File("Projecte_BP\\src\\dadesStock.txt");
-            fr = new FileReader(archivo);
-            br = new BufferedReader(fr);
-            // Lectura del fichero
-            String linea = br.readLine();
-            int contador = 0;
-            while (!linea.equals("-1")) {
 
-                System.out.println(linea);
-
-                String[] columnas = linea.split("\\t");
-                matriuLlistaCompra[contador] = columnas;
-
-
-                //Nos guarda la lista de Stock en la matriz.
-                linea = br.readLine();
-                contador++;
-            }
             Object dadesStock;
 
             Scanner entrada = new Scanner(System.in);
@@ -52,12 +35,34 @@ public class Stock {
 
             switch (aproducte) {
 
-                case 1:
-                    afegirProducte.productes();
+                case 1: //Afegir producte
+                    int contador2=0;
+                    for(int n=0;n<4;n++){
+
+                    }
                     break;
-                case 2:
+                case 2: //Consultar matriu
+                    archivo = new File("Projecte_BP\\src\\dadesStock.txt");
+                    fr = new FileReader(archivo);
+                    br = new BufferedReader(fr);
+                    // Lectura del fichero
+                    String linea = br.readLine();
+                    int contador = 0;
+                    while (!linea.equals("-1")) {
+
+                        System.out.println(linea);
+                        //Nos guarda la lista de Stock en la matriz.
+                        String[] producte = linea.split("\\t");
+                        matriuStock[contador] = producte;
+
+                       //Preparat per la següent lectura
+                        linea = br.readLine();
+                        contador++;
+                    }
                     break;
                 case 3:
+
+
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

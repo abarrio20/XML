@@ -16,47 +16,11 @@ public class afegirProducte {
         boolean salir = false;
         while (!salir) {
 
-            System.out.println("Quins productes voleu triar ?");
-            System.out.println("1. Llet 0.56");
-            System.out.println("2. Melmelada 3.00");
-            System.out.println("3. Pa 1.00");
-            System.out.println("4. Xocolata 2.00");
-            System.out.println("5. Galetes 1.50");
-            System.out.println("6. Maduixes 2.00");
-            System.out.println("7. Pizza 2.99");
-            System.out.println("8. Iogurt 1.50");
-            System.out.println("9. Brou de verdures/pollastre 1.75");
-            System.out.println("10. Cervesa 0.50");
+
 
             try {
                 int opcioP = entrada.nextInt();
-                switch (opcioP) {
 
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
-                    case 7:
-                        break;
-                    case 8:
-                        break;
-                    case 9:
-                        break;
-                    case 10:
-                        break;
-
-                    default:
-                        System.out.println(opcioP + " no es vàlida la teva opció");
-                        break;
-                }
             } catch (InputMismatchException e) {
                 System.out.println("Introdueix un numero");
                 entrada.next();
@@ -67,7 +31,7 @@ public class afegirProducte {
 
     public static String[][] omplirLlista(String[][] matriu, String[][] vector) {
         String[][] LlistaDeLaCompra = new String[10][4];
-
+        Scanner entrada = new Scanner("dadesStock");
         for (int o = 0; o < matriu.length; o++) {
 
             for (int k = 0; k < matriu[0].length; k++) {

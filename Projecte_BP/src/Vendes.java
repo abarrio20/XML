@@ -5,7 +5,7 @@ public class Vendes {
     public static void controlVendes() {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Si us plau, quina opció vol triar(Intro: codi de producte/Quantitat/sortir)? ");
+        System.out.println("Si us plau, quina opció vol triar? ");
         System.out.println("1. Codi de producte");
         System.out.println("2. Quantitat");
         System.out.println("3. Sortir");
