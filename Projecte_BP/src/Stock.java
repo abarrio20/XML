@@ -10,8 +10,8 @@ public class Stock {
         File archivo;
         FileReader fr = null;
         BufferedReader br;
-        String[][] matriuLlistaCompra = new String[10][3];
-        String[][] LlistaDeLaCompra = new String[10][4];
+        String[][] matriuLlistaCompra = new String[1000][3];
+        String[][] LlistaDeLaCompra = new String[1000][4];
         String carritocompra;
         //La lista de productos siempre será fija por lo tanto será de 3x10 SIEMPRE!!!!!
 
