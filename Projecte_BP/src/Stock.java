@@ -11,7 +11,7 @@ public class Stock {
         FileReader fr = null;
         BufferedReader br;
         String[][] matriuStock = new String[1000][3];
-        String[][] LlistaDeLaCompra = new String[1000][4];
+
         String carritocompra;
         //La lista de productos siempre será fija por lo tanto será de 3x10 SIEMPRE!!!!!
 
