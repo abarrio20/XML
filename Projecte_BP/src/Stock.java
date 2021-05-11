@@ -43,7 +43,7 @@ public class Stock {
             Scanner entrada = new Scanner(System.in);
 
 
-            System.out.println("Si us plau, quina opció vol triar? ");
+            System.out.println("\nSi us plau, quina opció vol triar? ");
             System.out.println("1. Afegir producte");
             System.out.println("2. Consultar");
             System.out.println("3. Sortir");

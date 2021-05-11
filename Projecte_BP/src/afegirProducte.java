@@ -7,7 +7,7 @@ public class afegirProducte {
         Scanner entrada = new Scanner(System.in);
         String[][] LlistaDeLaCompra = new String[10][4];
         int contadorLlistacompra = 0;
-        System.out.println("Quin producte voleu afegir ? ");
+
         menuProductes(entrada);
     }
 
