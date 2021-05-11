@@ -72,7 +72,7 @@ public class afegirProducte {
 
             for (int k = 0; k < matriu[0].length; k++) {
 
-                matriu[o][k] = LlistaDeLaCompra[10][4];
+                matriu[o][k] = LlistaDeLaCompra[100][4];
             }
 
         }
