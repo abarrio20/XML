@@ -5,12 +5,13 @@ import java.io.*;
 public class Stock {
     public static void controlstock() {
 
-
+        int contador=0;
         int aproducte;
         File archivo;
         FileReader fr = null;
         BufferedReader br;
         String[][] matriuStock = new String[1000][3];
+        String[][] matriuStock1 = new String[1000][3];
 
         String carritocompra;
         //La lista de productos siempre será fija por lo tanto será de 3x10 SIEMPRE!!!!!
@@ -36,18 +37,39 @@ public class Stock {
             switch (aproducte) {
 
                 case 1: //Afegir producte
-                    int contador2=0;
-                    for(int n=0;n<4;n++){
+                    archivo = new File("Projecte_BP\\src\\dadesStock.txt");
+                    fr = new FileReader(archivo);
+                    br = new BufferedReader(fr);
+                    // Lectura del fichero
+                    String linea1 = br.readLine();
 
+                    while (!linea1.equals("-1")) {
+
+                        System.out.println(linea1);
+                        //Nos guarda la lista de Stock en la matriz.
+                        String[] producte = linea1.split("\\t");
+                        matriuStock1[contador] = producte;
+                        for (int x=11; x < matriuStock1.length; x++) {
+                            for (int y=0; y < matriuStock1[x].length; y++) {
+                                System.out.println("Introdueix l'element [" + x + "," + y + "]");
+                                matriuStock1[x][y] = entrada.next();
+                                contador++;
+
+                            }
+                        }
+
+                        //Preparat per la següent lectura
+                        linea1 = br.readLine();
+                        contador++;
                     }
-                    break;
+
                 case 2: //Consultar matriu
                     archivo = new File("Projecte_BP\\src\\dadesStock.txt");
                     fr = new FileReader(archivo);
                     br = new BufferedReader(fr);
                     // Lectura del fichero
                     String linea = br.readLine();
-                    int contador = 0;
+
                     while (!linea.equals("-1")) {
 
                         System.out.println(linea);
