@@ -5,87 +5,84 @@ import java.io.*;
 public class Stock {
     public static void controlstock() {
 
-        int contador=0;
+
         int aproducte;
         File archivo;
         FileReader fr = null;
         BufferedReader br;
         String[][] matriuStock = new String[1000][3];
         String[][] matriuStock1 = new String[1000][3];
+        int x=0;
 
-        String carritocompra;
+
         //La lista de productos siempre será fija por lo tanto será de 3x10 SIEMPRE!!!!!
 
 
-        try {
+        try (Scanner entrada = new Scanner(System.in); Scanner entradafichero = new Scanner( new File("Projecte_BP\\src\\dadesStock.txt"))){
+            String linea;
+            while(entradafichero.hasNextLine()){
+                linea = entradafichero.nextLine();
+                añadirLineaDeStringsAlStock(matriuStock, linea, x);
+                x++;
+
+            }
 
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
 
             Object dadesStock;
 
-            Scanner entrada = new Scanner(System.in);
 
 
-            System.out.println("\nSi us plau, quina opció vol triar? ");
-            System.out.println("1. Afegir producte");
-            System.out.println("2. Consultar");
-            System.out.println("3. Sortir");
 
-            aproducte = entrada.nextInt();
+            do {
+                System.out.println("\nSi us plau, quina opció vol triar? ");
+                System.out.println("1. Afegir producte");
+                System.out.println("2. Consultar");
+                System.out.println("3. Sortir");
 
-            switch (aproducte) {
+                aproducte = entrada.nextInt();
 
-                case 1: //Afegir producte
-                    archivo = new File("Projecte_BP\\src\\dadesStock.txt");
-                    fr = new FileReader(archivo);
-                    br = new BufferedReader(fr);
-                    // Lectura del fichero
-                    String linea1 = br.readLine();
 
-                    while (!linea1.equals("-1")) {
+                switch (aproducte) {
+
+                    case 1: //Afegir producte
+                        String[] vec = recogeDatosDelProducte(x);
+                        añadeAlArray(matriuStock, vec, x);
+                        añadeAlStock(vec);
+                        x++;
+
+                        // Lectura del fichero
+
+
+                   /* while (!linea1.equals("-1")) {
 
                         System.out.println(linea1);
                         //Nos guarda la lista de Stock en la matriz.
                         String[] producte = linea1.split("\\t");
                         matriuStock1[contador] = producte;
-                        for (int x=11; x < matriuStock1.length; x++) {
-                            for (int y=0; y < matriuStock1[x].length; y++) {
-                                System.out.println("Introdueix l'element [" + x + "," + y + "]");
-                                matriuStock1[x][y] = entrada.next();
-                                contador++;
-
-                            }
-                        }
 
                         //Preparat per la següent lectura
                         linea1 = br.readLine();
                         contador++;
                     }
+                    */
+                    case 2: //Consultar matriu
+                        for (int i = 0; i < x; i++) {
+                            for (int n = 0; n < 3; n++) {
+                                System.out.print(matriuStock[i][n] + " ");
+                            }
+                            System.out.println("");
+                        }
 
-                case 2: //Consultar matriu
-                    archivo = new File("Projecte_BP\\src\\dadesStock.txt");
-                    fr = new FileReader(archivo);
-                    br = new BufferedReader(fr);
-                    // Lectura del fichero
-                    String linea = br.readLine();
-
-                    while (!linea.equals("-1")) {
-
-                        System.out.println(linea);
-                        //Nos guarda la lista de Stock en la matriz.
-                        String[] producte = linea.split("\\t");
-                        matriuStock[contador] = producte;
-
-                       //Preparat per la següent lectura
-                        linea = br.readLine();
-                        contador++;
-                    }
-                    break;
-                case 3:
+                        break;
+                    case 3:
 
 
+                }
             }
+
+            while(aproducte !=3);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -106,6 +103,51 @@ public class Stock {
         }
     }
 
+    private static void añadeAlStock(String[] vec) {
+        try(PrintWriter pw = new PrintWriter(new FileWriter("Projecte_BP\\src\\dadesStock.txt", true))){
+            pw.print(vec [0]+"\t"+vec [1]+"\t"+vec [2]);
+            pw.print("\n");
+        }
+        catch (Exception e){
+            System.out.println("error");
+        }
+    }
+
+    private static void añadeAlArray(String[][] matriuStock, String [] vec, int x) {
+        matriuStock[x][0] = vec[0];
+        matriuStock[x][1] = vec[1];
+        matriuStock[x][2] = vec[2];
+
+    }
+
+    private static String []  recogeDatosDelProducte(int x) {
+        Scanner entrada1 = new Scanner(System.in);
+        int ID = x+1;
+    String [] vec = new String[3];
+        System.out.println("El ID será: " + ID);
+        vec[0] = "" + ID;
+        System.out.println("Dime el nombre del producto");
+        vec[1] = entrada1.next();
+        System.out.println("Dime el precio");
+        vec[2] = entrada1.next();
+
+        return vec;
+
+    }
+
+    private static void  añadirLineaDeStringsAlStock(String[][] matriuStock, String linea, int x) {
+     String ID;
+     String nombreP ;
+     String precio ;
+
+     Scanner lineaP = new Scanner(linea);
+     ID = lineaP.next();
+     nombreP = lineaP.next();
+     precio = lineaP.next();
+     matriuStock[x][0] = ID;
+     matriuStock[x][1] = nombreP;
+     matriuStock[x][2] = precio;
+    }
 
 
     public static void mostrarLlista (String[][] taula) {
@@ -118,6 +160,8 @@ public class Stock {
             System.out.println("");
         }
     }
+
+
 }
 
 
