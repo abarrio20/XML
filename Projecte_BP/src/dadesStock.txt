@@ -8,4 +8,4 @@
 8	Iogurt	1.50
 9	BrouDeVerdures/pollastre	1.75
 10	Cervesa	0.50
-11	andrey	2.0012	lechem	3.0012	jfkjgf	3.00
+11
