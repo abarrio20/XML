@@ -1,4 +1,6 @@
+import javax.management.loading.PrivateClassLoader;
 import java.lang.reflect.Method;
+import java.security.Principal;
 import java.util.Scanner;
 import java.io.*;
 
@@ -16,7 +18,7 @@ public class Stock {
 		int x = 0;
 
 
-		//La lista de productos siempre será fija por lo tanto será de 3x10 SIEMPRE!!!!!
+
 
 
 		try (Scanner entrada = new Scanner(System.in); Scanner entradafichero = new Scanner(new File("Projecte_BP\\src\\dadesStock.txt"))) {
@@ -73,8 +75,8 @@ public class Stock {
 						}
 
 						break;
-					case 3:
-
+					case 3: //Sortir
+						;
 
 
 				}
