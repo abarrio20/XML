@@ -7,5 +7,4 @@
 7	Pizza	2.99
 8	Iogurt	1.50
 9	BrouDeVerdures/pollastre	1.75
-10	Cervesa	0.50
-11
+10	Cervesa	0.5011	Vi	1.00

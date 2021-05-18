@@ -1,3 +1,4 @@
+import java.lang.reflect.Method;
 import java.util.Scanner;
 import java.io.*;
 
@@ -11,7 +12,7 @@ public class Stock {
 		FileReader fr = null;
 		BufferedReader br;
 		String[][] matriuStock = new String[1000][3];
-		String[][] matriuStock1 = new String[1000][3];
+
 		int x = 0;
 
 
@@ -73,6 +74,7 @@ public class Stock {
 
 						break;
 					case 3:
+
 
 
 				}
