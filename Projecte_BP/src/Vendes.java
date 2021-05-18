@@ -61,6 +61,7 @@ public class Vendes {
 					sumaPreusTotals += preuTotal;
 					System.out.println(nom + " " + preuUnitat + " " + quantitat + " " + preuTotal);
 
+
 				}
 				System.out.println("                                                    Suma:" + sumaPreusTotals);
 				break;

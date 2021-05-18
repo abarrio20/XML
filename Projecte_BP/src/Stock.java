@@ -54,6 +54,7 @@ public class Stock {
 						// Lectura del fichero
 
 
+
                    /* while (!linea1.equals("-1")) {
 
                         System.out.println(linea1);
