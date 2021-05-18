@@ -6,6 +6,5 @@
 6	Maduixes	2.00
 7	Pizza	2.99
 8	Iogurt	1.50
-9	BrouDeVerdures/pollastre	1.75
-10	Cervesa	0.50
-
+9	PatatasFritas	2
+10	Spaguetti	18.00

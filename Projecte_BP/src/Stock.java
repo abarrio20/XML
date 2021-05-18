@@ -1,27 +1,14 @@
-import javax.management.loading.PrivateClassLoader;
-import java.lang.reflect.Method;
-import java.security.Principal;
 import java.util.Scanner;
 import java.io.*;
 
 
 public class Stock {
 	public static void controlstock() {
-
-
 		int aproducte;
-		File archivo;
-		FileReader fr = null;
-		BufferedReader br;
 		String[][] matriuStock = new String[1000][3];
-
 		int x = 0;
-
-
-
-
-
-		try (Scanner entrada = new Scanner(System.in); Scanner entradafichero = new Scanner(new File("Projecte_BP\\src\\dadesStock.txt"))) {
+		Scanner entrada = new Scanner(System.in);
+		try ( Scanner entradafichero = new Scanner(new File("Projecte_BP\\src\\dadesStock.txt"))) {
 			String linea;
 			while (entradafichero.hasNextLine()) {
 				linea = entradafichero.nextLine();
@@ -30,12 +17,8 @@ public class Stock {
 
 			}
 
-			// Apertura del fichero y creacion de BufferedReader para poder
-			// hacer una lectura comoda (disponer del metodo readLine()).
-
-
 			do {
-				System.out.println("\nSi us plau, quina opció vol triar? ");
+				System.out.println("Si us plau, quina opció vol triar? ");
 				System.out.println("1. Afegir producte");
 				System.out.println("2. Consultar");
 				System.out.println("3. Sortir");
@@ -48,59 +31,29 @@ public class Stock {
 					case 1: //Afegir producte
 						String[] vec = recogeDatosDelProducte(x);
 						añadeAlArray(matriuStock, vec, x);
-						añadeAlStock(vec);
 						x++;
-
-						// Lectura del fichero
-
-
-
-                   /* while (!linea1.equals("-1")) {
-
-                        System.out.println(linea1);
-                        //Nos guarda la lista de Stock en la matriz.
-                        String[] producte = linea1.split("\\t");
-                        matriuStock1[contador] = producte;
-
-                        //Preparat per la següent lectura
-                        linea1 = br.readLine();
-                        contador++;
-                    }
-                    */
+						añadeAlStock(vec);
+						break;
 					case 2: //Consultar matriu
+						System.out.println("\n              Stock  \n");
+						System.out.println("ID             Producto      Precio  \n");
 						for (int i = 0; i < x; i++) {
 							for (int n = 0; n < 3; n++) {
-								System.out.print(matriuStock[i][n] + " ");
+								System.out.printf("%-15s",matriuStock[i][n]);
 							}
 							System.out.println("");
 						}
-
+						System.out.println();
 						break;
 					case 3: //Sortir
-						;
-
-
+						break;
 				}
 			}
 
 			while (aproducte != 3);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			// En el finally cerramos el fichero, para asegurarnos
-			// que se cierra tanto si todo va bien como si salta
-			// una excepcion.
-			try {
-				if (null != fr) {
-					fr.close();
-				}
-			} catch (Exception e2) {
-				e2.printStackTrace();
-			}
 
-
+		} catch (Exception e) {
+			System.out.println("ERROR");
 		}
 	}
 

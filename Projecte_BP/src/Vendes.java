@@ -9,66 +9,73 @@ public class Vendes {
 
 		int[][] prod = new int[100][2];
 		int contador = 0;
+		int aproducte;
 
 
 		Scanner entrada = new Scanner(System.in);
+		do {
 
-		System.out.println("Si us plau, quina opció vol triar? ");
-		System.out.println("1. Afegir ID i quantitat");//Rellenar array 2 columna
-		System.out.println("2. Generar tiquet");
-		System.out.println("3. Sortir");
-
-		int aproducte = entrada.nextInt();
-
+			System.out.println("Si us plau, quina opció vol triar? ");
+			System.out.println("1. Afegir ID i quantitat");//Rellenar array 2 columna
+			System.out.println("2. Generar tiquet");
+			System.out.println("3. Sortir");
 
 
-		switch (aproducte) {
-
-			case 1:
+			aproducte = entrada.nextInt();
 
 
-				int id;
-				System.out.println("Para salir introduce -1");
-				do {
-					System.out.println("Dime la ID del producto");
-					id = entrada.nextInt();
-					if (id == -1) {
-						break;
+			switch (aproducte) {
+
+				case 1:
+
+
+					int id;
+					System.out.println("Para salir introduce -1");
+					do {
+						System.out.println("Dime la ID del producto");
+						id = entrada.nextInt();
+						if (id == -1) {
+							break;
+						}
+						System.out.println("Dime la cuantidad del producto");
+						int cantidad = entrada.nextInt();
+						System.out.println(" ");
+						rellenaArrayProductos(prod, contador, id, cantidad);
+						contador++;
 					}
-					System.out.println("Dime la cuantidad del producto");
-					int cantidad = entrada.nextInt();
-					rellenaArrayProductos(prod, contador, id, cantidad);
-					contador++;
-				}
-				while (id == -1);
+					while (id != -1);
 
-				break;
-			case 2:
-				String [] vec= new String[3];
-				int idProd;
-				String nom;
-				double preuUnitat;
-				int quantitat;
-				double preuTotal;
-				double sumaPreusTotals=0;
-				for (int n=0; n<contador; n++){
-					idProd=prod[n][0];
-					quantitat=prod[n][1];
-					vec=buscaId(idProd);
-					nom=vec[1];
-					preuUnitat=Double.parseDouble(vec[2]);
-					preuTotal= preuUnitat*quantitat;
-					sumaPreusTotals += preuTotal;
-					System.out.println(nom + " " + preuUnitat + " " + quantitat + " " + preuTotal);
-
-
-				}
-				System.out.println("                                                    Suma:" + sumaPreusTotals);
-				break;
-			case 3:
-				break;
+					break;
+				case 2:
+					String[] vec = new String[3];
+					int idProd;
+					String nom;
+					double preuUnitat;
+					int quantitat;
+					double preuTotal;
+					double sumaPreusTotals = 0;
+					System.out.println("                    TIQUET\n");
+					System.out.println("   Nom      Preu/Unitat€      Quantitat     PreuTotal\n");
+					for (int n = 0; n < contador; n++) {
+						idProd = prod[n][0];
+						quantitat = prod[n][1];
+						vec = buscaId(idProd);
+						nom = vec[1];
+						preuUnitat = Double.parseDouble(vec[2]);
+						preuTotal = preuUnitat * quantitat;
+						sumaPreusTotals += preuTotal;
+						System.out.printf("%-15s %-15.2f %-12d %-9.2f",nom, preuUnitat, quantitat, preuTotal);
+						System.out.println();
+					}
+					System.out.printf("                                    Suma:%-5.2f",sumaPreusTotals);
+					System.out.println("");
+					contador =0;
+					break;
+				case 3:
+					break;
+			}
 		}
-
+			while(aproducte != 3 );
 	}
 	public static String[] buscaId(int id){
 		int x = 0;
