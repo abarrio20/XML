@@ -67,7 +67,7 @@ public class Vendes {
 						System.out.printf("%-15s %-15.2f %-12d %-9.2f",nom, preuUnitat, quantitat, preuTotal);
 						System.out.println();
 					}
-					System.out.printf("                                    Suma:%-5.2f",sumaPreusTotals);
+					System.out.printf("                                    Suma:%-20.2f",sumaPreusTotals);
 					System.out.println("");
 					contador =0;
 					break;

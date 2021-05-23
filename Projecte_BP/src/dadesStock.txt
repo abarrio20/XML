@@ -8,3 +8,4 @@
 8	Iogurt	1.50
 9	PatatasFritas	2
 10	Spaguetti	18.00
+11	Cervesa	0.56

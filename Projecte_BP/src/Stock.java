@@ -8,7 +8,7 @@ public class Stock {
 		String[][] matriuStock = new String[1000][3];
 		int x = 0;
 		Scanner entrada = new Scanner(System.in);
-		try ( Scanner entradafichero = new Scanner(new File("Projecte_BP\\src\\dadesStock.txt"))) {
+		try ( Scanner entradafichero = new Scanner(new File("Projecte_BP\\src\\dadesStock.txt"))) { //Llegir el fitxer de dadesStock
 			String linea;
 			while (entradafichero.hasNextLine()) {
 				linea = entradafichero.nextLine();
@@ -17,7 +17,7 @@ public class Stock {
 
 			}
 
-			do {
+			do { //Preguntem a l'usuari que vol fer
 				System.out.println("Si us plau, quina opció vol triar? ");
 				System.out.println("1. Afegir producte");
 				System.out.println("2. Consultar");
@@ -28,7 +28,7 @@ public class Stock {
 
 				switch (aproducte) {
 
-					case 1: //Afegir producte
+					case 1: //Afegir producte a l'Stock
 						String[] vec = recogeDatosDelProducte(x);
 						añadeAlArray(matriuStock, vec, x);
 						x++;
